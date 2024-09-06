@@ -57,6 +57,10 @@ namespace InnoMarkets.Controllers
                             var token = Guid.NewGuid();
                             command.Parameters.AddWithValue("@Token", token);
                             command .ExecuteNonQuery();
+
+                            Email email = new();
+                            if (model.Correo != null)
+                            email.Enviar(model.Correo, token.ToString());
                         }
                     }
                     return RedirectToAction("Token");

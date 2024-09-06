@@ -29,6 +29,9 @@ namespace InnoMarkets.Data.Servicios
                     cmd.ExecuteNonQuery();
                     con.Close();
 
+                    Email email = new();
+                    if (correo != null)
+                    email.Enviar(correo, token.ToString());
 
                 }
             }
