@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QvDVSFB7YRM=",
+  "dgSpecHash": "tQ6vqaUEmIo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\USUARIO\\Desktop\\InnoMarkets\\InnoMarkets.csproj",
+  "projectFilePath": "C:\\Users\\USUARIO\\Documents\\Github\\InnoMarkets\\InnoMarkets.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USUARIO\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\USUARIO\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\USUARIO\\Desktop\\InnoMarkets\\InnoMarkets.csproj": {}
+    "C:\\Users\\USUARIO\\Documents\\Github\\InnoMarkets\\InnoMarkets.csproj": {}
   },
   "projects": {
-    "C:\\Users\\USUARIO\\Desktop\\InnoMarkets\\InnoMarkets.csproj": {
+    "C:\\Users\\USUARIO\\Documents\\Github\\InnoMarkets\\InnoMarkets.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USUARIO\\Desktop\\InnoMarkets\\InnoMarkets.csproj",
+        "projectUniqueName": "C:\\Users\\USUARIO\\Documents\\Github\\InnoMarkets\\InnoMarkets.csproj",
         "projectName": "InnoMarkets",
-        "projectPath": "C:\\Users\\USUARIO\\Desktop\\InnoMarkets\\InnoMarkets.csproj",
+        "projectPath": "C:\\Users\\USUARIO\\Documents\\Github\\InnoMarkets\\InnoMarkets.csproj",
         "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USUARIO\\Desktop\\InnoMarkets\\obj\\",
+        "outputPath": "C:\\Users\\USUARIO\\Documents\\Github\\InnoMarkets\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config",
