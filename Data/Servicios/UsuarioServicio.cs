@@ -59,6 +59,40 @@ namespace InnoMarkets.Data.Servicios
             }
             return model;
         }
+
+        public List<Usuario> ListarUsuarios()
+        {
+            var usuarios = new List<Usuario>();
+            using (SqlConnection con = new (_contexto.conexion))
+            {
+                using (SqlCommand cmd = new("ListarUsuarios", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    con.Open();
+                    SqlDataReader rdr = cmd.ExecuteReader();
+                    while (rdr.Read())
+                    {
+                        var usuario = new Usuario
+                        {
+                            UsuariosId = (int)rdr["UsuariosId"],
+                            Nombre = rdr["Nombre"].ToString(),
+                            Apellido = rdr["Apellido"].ToString(),
+                            Correo = rdr["Correo"].ToString(),
+                            Contrasena = rdr["Contrasena"].ToString(),
+                            RolId = (int)rdr["RolId"],
+                            NombreUsuario = rdr["NombreUsuario"].ToString(),
+                            Estado = Convert.ToBoolean(rdr["Estado"]),
+                            Token = rdr["Token"].ToString(),
+                            FechaExpiracion = Convert.ToDateTime(rdr["FechaExpiracion"])
+                        };
+                        usuarios.Add(usuario);
+                    }
+                }
+            }
+            {
+                
+            }
+        }
         
         public Usuario ObtenerUsuarioId(int id)
         {
@@ -87,6 +121,7 @@ namespace InnoMarkets.Data.Servicios
                             Estado = Convert.ToBoolean(rdr["Estado"]),
                             Token = rdr["Token"].ToString(),
                             FechaExpiracion = Convert.ToDateTime(rdr["FechaExpiracion"]),
+
                         };
                     }
                 }

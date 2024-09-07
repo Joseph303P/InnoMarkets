@@ -3,6 +3,7 @@ using InnoMarkets.Models;
 using System.Data;
 using System.Security.Cryptography.X509Certificates;
 using System.Runtime.InteropServices;
+using InnoMarkets.Data.Enums;
 
 namespace InnoMarkets.Data.Servicios;
 
