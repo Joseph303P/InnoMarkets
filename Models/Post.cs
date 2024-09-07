@@ -1,7 +1,7 @@
 using System.ComponentModel.DataAnnotations;
+using InnoMarkets.Data.Enums;
 
-namespace InnoMarkets.Models
-{
+namespace InnoMarkets.Models;
 
 public class Post
 {
@@ -22,9 +22,4 @@ public class Post
 
     public DateTime FechaCreacion {get; set; }
 
-}
-
-    public class CategoriaEnum
-    {
-    }
 }
