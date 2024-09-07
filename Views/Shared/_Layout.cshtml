@@ -9,28 +9,11 @@
     <link rel="stylesheet" href="~/InnoMarkets.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">InnoMarkets</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
+    
+
+    @await Html.PartialAsync("~/Views/Shared/Partials/_Header.cshtml")
+
+    <div class="container py-5 d-flex flex-colum min-vh-100">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -39,6 +22,39 @@
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2024 - InnoMarkets - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer class="bg-dark text-Light py-4 sticky-bottom mt-auto">
+        <div class="Container">
+            <div class="row align-item-center">
+                <div class="col-md-4">
+                    <h5 class="mb-3">Redes Sociales</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#" class="text-Light"><i class="fab fa-facebook me-2"></i> Facebook</a></li>
+                        <li><a href="#" class="text-Light"><i class="fab fa-twitter me-2"></i> Twittter</a></li>
+                        <li><a href="#" class="text-Light"><i class="fab fa-instagram me-2"></i> Instagram</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="mb-3">Recursos</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#" class="text-Light">Politica de Privacidad</a></li>
+                        <li><a href="#" class="text-Light">Terminos y condiciones</a></li>
+                        <li><a href="#" class="text-Light">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="mb-3">Newletter</h5>
+                    <form class="form-inLine">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Introduce tu email">
+                            <button class="btn btn-primary" type="submit"><i class="fa fa-paper-plane"
+                            aria-hidden="true"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="my-4">
+            <p class="text-center small mb-0">&copy; 2023 - InnoMarkets. Todos los derechos reservados</p> 
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
