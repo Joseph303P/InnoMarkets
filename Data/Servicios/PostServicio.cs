@@ -19,7 +19,7 @@ public class PostServicio
     public Post ObtenerPostPorId(int id)
     {
         var post = new Post();
-        using (var connection = new SqlConnection(_contexto.conexion))
+        using (var connection = new SqlConnection(_contexto.Conexion))
         {
             connection.Open();
             using (var command = new SqlCommand("ObtenerPostId", connection))
@@ -53,7 +53,7 @@ public class PostServicio
     public List<Post> ObtenerPosts()
     {
         var posts = new List<Post>();
-        using (var connection = new SqlConnection(_contexto.conexion))
+        using (var connection = new SqlConnection(_contexto.Conexion))
         {
             connection.Open();
             using (SqlCommand cmd = new ("ObtenerPost", connection))
@@ -86,7 +86,7 @@ public class PostServicio
      public List<Post> ObtenerPostsCategoria(CategoriaEnum categoria)
     {
         var posts = new List<Post>();
-        using (var connection = new SqlConnection(_contexto.conexion))
+        using (var connection = new SqlConnection(_contexto.Conexion))
         {
             connection.Open();
             using (SqlCommand cmd = new ("ObtenerPostCategoria", connection))
@@ -120,7 +120,7 @@ public class PostServicio
     public List<Post> ObtenerPostsTitulo(string titulo)
     {
         var posts = new List<Post>();
-        using (var connection = new SqlConnection(_contexto.conexion))
+        using (var connection = new SqlConnection(_contexto.Conexion))
         {
             connection.Open();
             using (SqlCommand cmd = new ("ObtenerPostTitulo", connection))
@@ -153,7 +153,7 @@ public class PostServicio
     public List<Comentario> ObtenerComentariosPorPostId(int id)
     {
         var Comments = new List<Comentario>();
-        using (var connection = new SqlConnection(_contexto.conexion))
+        using (var connection = new SqlConnection(_contexto.Conexion))
         {
             connection.Open();
             using (var command = new SqlCommand("ObtenerComentariosPostId", connection))
@@ -184,7 +184,7 @@ public class PostServicio
 
     public List<Comentario> ObtenerComentariosHijos(List<Comentario> comments)
     {
-        using (var connection = new SqlConnection(_contexto.conexion))
+        using (var connection = new SqlConnection(_contexto.Conexion))
         {
             connection.Open();
             foreach (var comment in comments)
@@ -223,7 +223,7 @@ public class PostServicio
 
     public List<Comentario> ObtenerComentariosNietos(List<Comentario> comments)
     {
-        using (var connection = new SqlConnection(_contexto.conexion))
+        using (var connection = new SqlConnection(_contexto.Conexion))
         {
             connection.Open();
             foreach (var comment in comments)

@@ -38,7 +38,7 @@ public class UsuarioController : Controller
     [HttpPost]
     public ActionResult ActualizarPerfil(Usuario model)
     {
-        using (SqlConnection con = new SqlConnection(_contexto.conexion))
+        using (SqlConnection con = new SqlConnection(_contexto.Conexion))
         {
             using (SqlCommand cmd = new ("ActualizarPerfil", con))
             {
@@ -64,7 +64,7 @@ public class UsuarioController : Controller
         if (userIdClain != null && int.TryParse(userIdClain.Value, out int parsedUserId))
         userId = parsedUserId;
 
-        using (SqlConnection con = new(_contexto.conexion))
+        using (SqlConnection con = new(_contexto.Conexion))
         {
             using (SqlCommand cmd = new("EliminarUsuario", con))
             {

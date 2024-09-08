@@ -3,11 +3,11 @@ namespace InnoMarkets.Data
     public class Contexto
     {
 
-        public string conexion { get; }
+        public string Conexion { get; }
 
         public Contexto(string valor)
         {
-            conexion = valor!;
+            Conexion = valor!;
         }
     }
 }

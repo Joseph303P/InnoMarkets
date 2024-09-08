@@ -31,7 +31,7 @@ namespace InnoMarkets.Controllers
         [Authorize(Roles="Administrador")]
         public IActionResult Create(Post post)
         {
-            using (var connection = new SqlConnection( _contexto.conexion))
+            using (var connection = new SqlConnection( _contexto.Conexion))
             {
                 connection.Open();
                 using (var command = new SqlCommand("IngresarPost", connection))
@@ -62,7 +62,7 @@ namespace InnoMarkets.Controllers
         [Authorize(Roles="Administrador")]
         public IActionResult Update(Post post)
         {
-            using (var connection = new SqlConnection( _contexto.conexion))
+            using (var connection = new SqlConnection( _contexto.Conexion))
             {
                 connection.Open();
                 using (var command = new SqlCommand("ActualizarPost", connection))
@@ -85,7 +85,7 @@ namespace InnoMarkets.Controllers
         [Authorize(Roles="Administrador")]
         public IActionResult Delete(int id)
         {
-            using (var connection = new SqlConnection( _contexto.conexion))
+            using (var connection = new SqlConnection( _contexto.Conexion))
             {
                 connection.Open();
                 using (var command = new SqlCommand("EliminarPost", connection))
@@ -138,7 +138,7 @@ namespace InnoMarkets.Controllers
 
                 DateTime fechaPublicacion = DateTime.UtcNow;
 
-                using (SqlConnection con = new (_contexto.conexion))
+                using (SqlConnection con = new (_contexto.Conexion))
                 {
                     using (SqlCommand cmd = new ("AgregarComentario", con))
                     {

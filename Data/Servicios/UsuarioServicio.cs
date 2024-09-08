@@ -15,7 +15,7 @@ namespace InnoMarkets.Data.Servicios
 
         public void ActualizarToken(string correo)
         {
-            using (SqlConnection con = new (_contexto.conexion))
+            using (SqlConnection con = new (_contexto.Conexion))
             {
                 using (SqlCommand cmd = new("ActualizarToken", con))
                 {
@@ -39,7 +39,7 @@ namespace InnoMarkets.Data.Servicios
         public List<Roles> ListarRoles()
         {
             var model = new List<Roles>();
-            using (var connection = new SqlConnection(_contexto.conexion))
+            using (var connection = new SqlConnection(_contexto.Conexion))
             {
                 connection.Open();
                 using (SqlCommand cmd = new("ListarRoles", connection))
@@ -63,7 +63,7 @@ namespace InnoMarkets.Data.Servicios
         public List<Usuario> ListarUsuarios()
         {
             var usuarios = new List<Usuario>();
-            using (SqlConnection con = new (_contexto.conexion))
+            using (SqlConnection con = new (_contexto.Conexion))
             {
                 using (SqlCommand cmd = new("ListarUsuarios", con))
                 {
@@ -96,7 +96,7 @@ namespace InnoMarkets.Data.Servicios
         {
             Usuario usuario = new();
 
-            using (SqlConnection con = new(_contexto.conexion))
+            using (SqlConnection con = new(_contexto.Conexion))
             {
                 using (SqlCommand cmd = new("ObtenerUsuarioId", con))
                 {

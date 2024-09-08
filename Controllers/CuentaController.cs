@@ -40,7 +40,7 @@ namespace InnoMarkets.Controllers
             {
                 try
                 {
-                    using (var connection = new SqlConnection(_contexto.conexion))
+                    using (var connection = new SqlConnection(_contexto.Conexion))
                     {
                         connection.Open();
                         using (var command = new SqlCommand("RegistrarUsuario", connection))
@@ -86,7 +86,7 @@ namespace InnoMarkets.Controllers
             {
               try
               {
-                using (SqlConnection con = new SqlConnection(_contexto.conexion))
+                using (SqlConnection con = new SqlConnection(_contexto.Conexion))
                 {
                     using (SqlCommand cmd = new SqlCommand("ActivarCuenta", con))
                     {
@@ -144,7 +144,7 @@ namespace InnoMarkets.Controllers
 
             try
             {
-                using (SqlConnection con = new(_contexto.conexion))
+                using (SqlConnection con = new(_contexto.Conexion))
                 {
                     using (SqlCommand cmd = new("ValidarUsuario", con))
                     {

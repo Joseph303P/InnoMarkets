@@ -61,7 +61,7 @@ public class AdminUsuarioController : Controller
     {
         try
         {
-            using (SqlConnection con = new (_contexto.conexion))
+            using (SqlConnection con = new (_contexto.Conexion))
             {
                 using (SqlCommand cmd = new("RegistrarUsuario", con))
                 {
@@ -113,7 +113,7 @@ public class AdminUsuarioController : Controller
         return NotFound();
         try
         {
-            using (SqlConnection con = new(_contexto.conexion))
+            using (SqlConnection con = new(_contexto.Conexion))
             {
                 using (SqlCommand cmd = new("ActualizarUsuario", con))
                 {
@@ -153,7 +153,7 @@ public class AdminUsuarioController : Controller
     {
         try
         {
-            using (SqlConnection con = new SqlConnection(_contexto.conexion))
+            using (SqlConnection con = new SqlConnection(_contexto.Conexion))
             {
                 using (SqlCommand cmd = new("EliminarUsuario", con))
                 {
