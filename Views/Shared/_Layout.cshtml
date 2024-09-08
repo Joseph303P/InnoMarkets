@@ -1,9 +1,10 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - InnoMarkets</title>
+    <title>@ViewData["Title"] - Inno'Markets</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/InnoMarkets.styles.css" asp-append-version="true" />
@@ -13,17 +14,13 @@
 
     @await Html.PartialAsync("~/Views/Shared/Partials/_Header.cshtml")
 
-    <div class="container py-5 d-flex flex-colum min-vh-100">
-        <main role="main" class="pb-3">
+    <div class="container py-5 d-flex flex-column min-vh-100">
+        <main role="main">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - InnoMarkets - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer class="bg-dark text-Light py-4 sticky-bottom mt-auto">
+    <footer class="bg-dark text-Light py-4 sticky-bottom mt-auto">
         <div class="Container">
             <div class="row align-item-center">
                 <div class="col-md-4">
@@ -56,7 +53,9 @@
             <hr class="my-4">
             <p class="text-center small mb-0">&copy; 2023 - InnoMarkets. Todos los derechos reservados</p> 
         </div>
-    </footer>
+    </footer class="bg-dark text-Light py-4 sticky-bottom mt-auto">
+        
+    
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
