@@ -85,13 +85,11 @@ namespace InnoMarkets.Data.Servicios
                             Token = rdr["Token"].ToString(),
                             FechaExpiracion = Convert.ToDateTime(rdr["FechaExpiracion"])
                         };
-                        usuarios.Add(usuario);
+                        
                     }
                 }
             }
-            {
-                
-            }
+            return usuarios;
         }
         
         public Usuario ObtenerUsuarioId(int id)
@@ -127,6 +125,7 @@ namespace InnoMarkets.Data.Servicios
                 }
             }
             return usuario;
+            
         }
     }
 }
