@@ -5,11 +5,13 @@ namespace InnoMarkets.Data;
 
 public class Email
 {
+    //Se utiliza para enviar un correo electronico al usuario
     public void Enviar(string correo, string token)
     {
         Correo(correo, token);
     }
 
+    //Configura el correo electronico y enviarlo usando el protocolo smtp
     void Correo(string correo_receptor, string token)
     {
         string correo_emisor = "@hotmail.com";

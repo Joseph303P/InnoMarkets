@@ -25,27 +25,30 @@ public class AdminUsuarioController : Controller
     {
         var usuarios = _usuarioServicio.ListarUsuarios();
         if (!String.IsNullOrEmpty(buscar))
-        
+
+            //Buscar mediante el correo o Nombre de usuario
             usuarios=usuarios.Where(u => u.Correo !=null && u.Correo.Contains(buscar) || u.NombreUsuario !=null && u.NombreUsuario.Contains(buscar)).ToList();
             usuarios = usuarios.OrderBy(u => u.NombreUsuario).ToList();
 
             List<SelectListItem> roles = _usuarioServicio.ListarRoles().Select(r=> new SelectListItem
             {
+                //Se mostrara su rol ya sea administrador o usuario
                 Value= r.RolId.ToString(),
                 Text = r.Nombre
             }).ToList();
             ViewBag.Roles = roles;
 
             int pageSize = 10;
-            int pageNumber = (pagina ?? 1);
+            int pageNumber = (pagina ?? 1);  //si no re asigna ningun numerode pagina se establecera a la pagina 1
             var usuariospaginados = usuarios.ToPagedList(pageNumber, pageSize);
 
-            return View(usuariospaginados);
+            return View(usuariospaginados);  //Datos ya actualizados
         
     }
     
     public IActionResult Create()
     {
+        //Lista desplegable de roles
         List<SelectListItem> roles = _usuarioServicio.ListarRoles().Select(r=> new SelectListItem
             {
                 Value= r.RolId.ToString(),
@@ -109,7 +112,7 @@ public class AdminUsuarioController : Controller
     [HttpPost]
     public IActionResult Edit(int id, Usuario usuario)
     {
-        if (id != usuario.UsuariosId)
+        if (id != usuario.UsuariosId) //Si no coincide el id con ningun registro enviara mensaje de "No Enconttrado"
         return NotFound();
         try
         {

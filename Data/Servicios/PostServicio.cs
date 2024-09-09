@@ -16,6 +16,7 @@ public class PostServicio
         _contexto = con;
     }
 
+    //Controlador para obtener pos mediantes un identificador 
     public Post ObtenerPostPorId(int id)
     {
         var post = new Post();
@@ -50,6 +51,7 @@ public class PostServicio
 
     }
 
+    //Constructor para Obtener todos los post en general
     public List<Post> ObtenerPosts()
     {
         var posts = new List<Post>();
@@ -83,6 +85,7 @@ public class PostServicio
         return posts;
     }
 
+    //Obtiene los post por categoria
      public List<Post> ObtenerPostsCategoria(CategoriaEnum categoria)
     {
         var posts = new List<Post>();
@@ -117,6 +120,7 @@ public class PostServicio
         return posts;
     }
 
+    //Obtener post por su titulo
     public List<Post> ObtenerPostsTitulo(string titulo)
     {
         var posts = new List<Post>();
@@ -149,7 +153,8 @@ public class PostServicio
 
         return posts;
     }
-    
+
+    //Obtiene comentarios que se encuentra en un post por medio de un identificador
     public List<Comentario> ObtenerComentariosPorPostId(int id)
     {
         var Comments = new List<Comentario>();
@@ -182,6 +187,7 @@ public class PostServicio
         return Comments;
     }
 
+    //Se encarga de recuperar comentarios secundarios asociados a los comentarios principales 
     public List<Comentario> ObtenerComentariosHijos(List<Comentario> comments)
     {
         using (var connection = new SqlConnection(_contexto.Conexion))

@@ -10,6 +10,7 @@ using System.Collections.ObjectModel;
 
 namespace InnoMarkets.Controllers
 {
+    //Controlador para entidad post. Define varias acciones para manejar las acciones CRUD
     public class PostController : Controller
     {
         private readonly Contexto _contexto;
@@ -20,7 +21,8 @@ namespace InnoMarkets.Controllers
             _contexto = con;
             _postServicio = new PostServicio(con);
         }}
-
+      //Restrincion de acceso a los usuario roles no autorizados
+      //Vista para crear un nuevo post
         [Authorize(Roles="Administrador")]
         public IActionResult Create()
         {
@@ -58,6 +60,7 @@ namespace InnoMarkets.Controllers
             return View(post);
         }
 
+       //Funciona para actualizar un post identificandolo por id
         [HttpPost]
         [Authorize(Roles="Administrador")]
         public IActionResult Update(Post post)
@@ -80,7 +83,7 @@ namespace InnoMarkets.Controllers
             return RedirectToAction("Index", "Home");
             
         }
-
+        //Este controlador elimina post identificandolo por su id
         [HttpPost]
         [Authorize(Roles="Administrador")]
         public IActionResult Delete(int id)
@@ -100,7 +103,8 @@ namespace InnoMarkets.Controllers
             return RedirectToAction("Index", "Home");
             
         }
-
+        //Controlador que nos permite llamar a la publicacion mediante su idenficador
+        //se muestra la informacion detallada de un pos mas comentarios asociados
         public IActionResult Details(int id)
         {
             var post = _postServicio.ObtenerPostPorId(id);
@@ -108,6 +112,7 @@ namespace InnoMarkets.Controllers
             Comentario = _postServicio.ObtenerComentariosHijos(Comentario);
             Comentario = _postServicio.ObtenerComentariosNietos(Comentario);   
 
+            //
             var models = new PostDetalleViewModels  
             {
                 Post=post,
@@ -119,18 +124,21 @@ namespace InnoMarkets.Controllers
 
             return View(models);       
         }
-
+         
+         //Controlador que permite comentar en las publicaciones
         [HttpPost]
         public IActionResult AgregarComentario(int postId, string Comentario, int? comentariopadreid)
         {
             try
-            {
+            {    
+                //Una condicion para que el comentario no sea nulo
                 if (string.IsNullOrWhiteSpace(Comentario))
                 {
                     ViewBag.Error = "El comentario no puede estar vacio.";
                     return RedirectToAction("Details", "Post", new { id = postId });
                 }
 
+                //Validar que haya un usuario autenticado
                 int? userId  = null ;
                 var userIdClaim = User.FindFirst("IdUsuario");
                 if (userIdClaim != null  && int.TryParse(userIdClaim.Value, out int parsedUserId))

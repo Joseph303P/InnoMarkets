@@ -30,7 +30,7 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
-//Ridirige al usuario en caso que no tenga un acceso a un Controlador
+//Ridirige al usuario en caso que no tenga un acceso a un Controlador no autorizado
 app.UseStatusCodePagesWithRedirects("~/Homd/Index");
 
 app.MapControllerRoute(

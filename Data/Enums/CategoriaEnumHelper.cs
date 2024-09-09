@@ -3,6 +3,7 @@ using System.Reflection;
 
 namespace InnoMarkets.Data.Enums;
 
+//Obtiene la Descripcion de la categoria a trevez de un atributo descripcion
 public class CategoriaEnumHelper
 {
     public static string ObtenerDescripcion(CategoriaEnum categoria)

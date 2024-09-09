@@ -23,6 +23,7 @@ public class UsuarioController : Controller
         _usuarioServicio = new UsuarioServicio(contexto);
     }
 
+    //Metodo de perfil de usuario
     [Authorize]
     public ActionResult Perfil()
     {
@@ -73,7 +74,7 @@ public class UsuarioController : Controller
                 con.Open();
                 cmd.ExecuteNonQuery();
             }
-            HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme); //Cierre de la sesion
             return RedirectToAction("Index", "Home");
         }
     }

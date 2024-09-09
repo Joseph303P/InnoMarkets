@@ -22,6 +22,7 @@ public class HomeController : Controller
            post = _postServicio.ObtenerPosts();
         else if (!string.IsNullOrEmpty(categoria))
         {
+            // Que categoria nosea nula
             var categoriaEnum= Enum.Parse<CategoriaEnum>(categoria);
             post= _postServicio.ObtenerPostsCategoria(categoriaEnum);
 
@@ -32,6 +33,8 @@ public class HomeController : Controller
         }
         else if(!string.IsNullOrEmpty(buscar))
         {
+            // Que buscar nosea nulo
+            //Buscar Por titulo
             post = _postServicio.ObtenerPostsTitulo(buscar);
             if (post.Count == 0)
             ViewBag.Error = $"Nose encontraron publicaciones en la categoria {buscar}.";
@@ -39,6 +42,7 @@ public class HomeController : Controller
 
             
         }
+        //Muestra cantidad por pagina
         int pageSize = 6;
         int pageNumber = (pagina ?? 1);
 

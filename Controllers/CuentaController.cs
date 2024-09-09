@@ -31,8 +31,10 @@ namespace InnoMarkets.Controllers
             return View();
         }
         
+        //Medida de seguraridad que nos ayuda a prevenir ataques ccrs
         [HttpPost, ValidateAntiForgeryToken]
 
+        //Controlador para registrar usuario
         public IActionResult Registrar(Usuario model)
         {
 
@@ -49,7 +51,7 @@ namespace InnoMarkets.Controllers
                             command.Parameters.AddWithValue("@Nomre", model.Nombre);
                             command.Parameters.AddWithValue("@Apellido", model.Apellido);
                             command.Parameters.AddWithValue("@Correo", model.Correo);
-                            string hashedPasswork = BCrypt.Net.BCrypt.HashPassword(model.Contrasena);
+                            string hashedPasswork = BCrypt.Net.BCrypt.HashPassword(model.Contrasena);  //Encriptar Contraseña
                             command.Parameters.AddWithValue("@Contrasena", hashedPasswork);
                             command.Parameters.AddWithValue("@NombreUsuario", model.NombreUsuario);
                             DateTime fechaexpiracion = DateTime.UtcNow.AddMinutes(5);
@@ -125,6 +127,8 @@ namespace InnoMarkets.Controllers
             return View();
         }
 
+        //Metodo para Autenticarse
+        //Si ya esta autenticado
         public IActionResult Login()
         {
             ClaimsPrincipal c = HttpContext.User;
@@ -140,7 +144,7 @@ namespace InnoMarkets.Controllers
         public async Task<IActionResult> Login(LoginViewModels model)
         {
             if (!ModelState.IsValid)
-            return View(model);
+            return View(model); //En caso que no sea valido retonara a la vista con  el modelo
 
             try
             {
@@ -157,11 +161,12 @@ namespace InnoMarkets.Controllers
                             {
                                 if (dr.Read())
                                 {
-                                    bool passwordMatch=BCrypt.Net.BCrypt.Verify(model.Contrasena, dr["Contrasena"].ToString());
+                                    bool passwordMatch=BCrypt.Net.BCrypt.Verify(model.Contrasena, dr["Contrasena"].ToString()); //
                                     if (passwordMatch)
                                     {
                                         DateTime fechaexpiracion = DateTime.UtcNow;
 
+                                        //Reenvio de un nuevo Token y el tiempo de expiracion ya caduco
                                         if (!(bool)dr["Estado"] && dr["FechaExpiracion"].ToString()!=fechaexpiracion.ToString())
                                         {
                                             if (model.Correo != null)
@@ -174,6 +179,7 @@ namespace InnoMarkets.Controllers
                                         else if(!(bool)dr["Estado"])
                                             ViewBag.Error= "Su cuenta no ha sido activada, verifique su bandeja de entrada";
 
+                                            //Si el procedimiento se hizo correctamente y la cuenta esta activa
                                         else
                                         {
                                             string nombreusuario = dr["NombreUsuario"].ToString();
@@ -181,12 +187,14 @@ namespace InnoMarkets.Controllers
 
                                             if (nombreusuario != null)
                                             {
+                                                //Guardo de informacion para autenticacion mediante un Claim
                                                 var claims = new List<Claim>()
                                                 {
                                                     new Claim(ClaimTypes.NameIdentifier, nombreusuario),
                                                     new Claim("IdUsuario", idUsuario.ToString())
                                                 };
-
+                                                
+                                                //Definiendo rol del usuario
                                                 int rolId = (int)dr["RolId"];
                                                 string rolNombre = rolId == 1? "Administrador" : "Usuario";
                                                 claims.Add(new Claim(ClaimTypes.Role, rolNombre));
@@ -194,6 +202,7 @@ namespace InnoMarkets.Controllers
                                                 var identity= new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                                                 var propiedades = new AuthenticationProperties
                                                 {
+                                                    //Opcion de mantener cuenta activa 
                                                     AllowRefresh = true,
                                                     IsPersistent = model.MantenerActivo,
                                                     ExpiresUtc = DateTimeOffset.UtcNow.Add(model.MantenerActivo ? TimeSpan.FromDays(1): TimeSpan.FromMinutes(5))
@@ -231,6 +240,8 @@ namespace InnoMarkets.Controllers
             
         }        
 
+        
+        //Metodo para cerrar sesion
         public async Task<IActionResult> CerrarSesion()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
