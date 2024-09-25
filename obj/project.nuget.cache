@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "D7O0LKQ9aVU=",
+  "dgSpecHash": "qlUgzqT7luU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\USUARIO\\Desktop\\InnoMasketss\\InnoMasketss.csproj",
+  "projectFilePath": "C:\\Users\\USUARIO\\Documents\\Github\\InnoMarkets\\InnoMasketss.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\USUARIO\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\USUARIO\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.0.0\\microsoft.aspnetcore.antiforgery.2.0.0.nupkg.sha512",
