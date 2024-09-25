@@ -6,6 +6,7 @@
 }
 
 <div class="container">
+
     <div class="row">
         <div class="col-md-12">
             <h1 class="display-4 mb-4">Bievenidos a la Pagina Oficial de InnoMarkets</h1>
@@ -13,7 +14,7 @@
         </div>
     </div>
     <div class="row">
-        @if (ViewBag.Error !=null)
+        @if (ViewBag.Error!=null)
         {
             <div class="alert alert-info" role="alert">
                 @ViewBag.Error
@@ -23,28 +24,29 @@
         {
             <div class="col-md-4 mb-4">
                 <div class="card h-100 shadow">
-                     <div class="card-body">
+                    <div class="card-body">
                         <h2>@post.Titulo</h2>
-                     </div>
-                     <div class="card-footer">
+                    </div>
+                    <div class="card-footer">
                         <small class="text-muted">@post.FechaCreacion.ToShortDateString()</small>
                         <div class="float-right">
                             <a asp route id="@post.PostId" asp-action="Details" asp-controller="Post"
-                            class="btn btn-sm btn-primary">Ver publicaciones</a>
+                               class="btn btn-sm btn-primary">Ver publicaciones</a>
                         </div>
-                     </div>
+                    </div>
                 </div>
             </div>
         }
     </div>
     <div class="row">
         <div class="col-md-12">
-            @Html.PagedListPager(Model, pagina=> Url.Action("Index", new{pagina}), new PagedListRenderOptions(){
-                LiElementClasses=new string[] {"page-item"},
-                PageClasses=new string[] {"page-link"},
-                ContainerDivClasses=new string[] {"pagination justify-content-center"},
-                UlElementClasses= new string[] {"pagination"}
-            })
+            @Html.PagedListPager(Model, pagina => Url.Action("Index", new { pagina }), new PagedListRenderOptions()
+       {
+           LiElementClasses = new string[] { "page-item" },
+           PageClasses = new string[] { "page-link" },
+           ContainerDivClasses = new string[] { "pagination justify-content-center" },
+           UlElementClasses = new string[] { "pagination" }
+       })
         </div>
     </div>
 </div>

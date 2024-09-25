@@ -1,77 +1,77 @@
-@using System.Security.Claims
+﻿@using System.Security.Claims
 @using Microsoft.AspNetCore.Mvc
 
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">InnoMarkets</a>
-         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav me-auto"> 
-                <li class="nav-item"> 
-                    <a class="nav-link active" href="@Url.Action("Index", "Home")">Inicio</a>,
-                </li>
-                <li class="nav-item"> 
-                    <a class="nav-link active" href="@Url.Action("Index", "Home", new{categoria="Noticia"})">Noticia</a>
-                </li>
-                <li class="nav-item"> 
-                    <a class="nav-link active" href="@Url.Action("Index", "Home", new{ categoria="Opinion"})">Opinion</a>
-                </li>
-                <li class="nav-item"> 
-                    <a class="nav-link active" href="@Url.Action("Index", "Home", new{ categoria="Finanzas"})">Finanzas</a>
-                </li>
-                <li class="nav-item"> 
-                    <a class="nav-link active" href="@Url.Action("Index", "Home", new{ categoria="Consejos"})">Consejos</a>
-                </li>
-                <li class="nav-item"> 
-                    <a class="nav-link active" href="@Url.Action("Index", "Home", new{ categoria="Planificacion"})">Planificacion</a>
-                </li>
-            </ul>
-
-            <form class="d-flex" method="get" asp-controller="Home" asp-action="Index">
-                <input class="form-control me-2" type="search" placeholder="Buscar..." name="buscar">
-                <button class="btn btn-outline-secondary" type="submit">Buscar</button>
-            </form>
-
-            <ul class="navbar-nav ms-auto">
-                @if(!(User?.Identity?.IsAuthenticated ?? false))
-                {
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" asp-action="Registrar" asp-controller="Cuenta">Registrarse</a>
+                        <a class="nav-link active" href="@Url.Action("Index", "Home")">Inicio</a>,
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" asp-action="Login" asp-controller="Cuenta">Inicio sesion</a>
+                        <a class="nav-link" href="@Url.Action("Index", "Home", new{categoria="Noticia"})">Noticia</a>
                     </li>
-                }
-                else
-                {
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" id="userDropdown" data-bs-toggle="dropdown">
-                            @User.FindFirstValue(ClaimTypes.NameIdentifier)
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                            <li>
-                                <a class="dropdown-item" asp-action="Perfil" asp-controller="Usuarios">Mi perfil</a>
-                            </li>
-                            @if (User.IsInRole("Administrador"))
-                            {
-                                <li>
-                                    <a class="dropdown-item" asp-action="Create" asp-controller="Post">Crear post</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" asp-action="Index" asp-controller="AdminUsuario">Administrar Usuarios</a>
-                                </li>
-                            }
-                            <li>
-                                <a class="dropdown-item" asp-action="CerrarSesion" asp-controller="Cuenta">Cerrar sesion</a>
-                            </li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", "Home", new{ categoria="Opinion"})">Opinion</a>
                     </li>
-                }
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", "Home", new{ categoria="Finanzas"})">Finanzas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", "Home", new{ categoria="Consejos"})">Consejos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Index", "Home", new{ categoria="Planificacion"})">Planificacion</a>
+                    </li>
+                </ul>
 
-            </ul>
+                <form class="d-flex" method="get" asp-controller="Home" asp-action="Index">
+                    <input class="form-control me-2" type="search" placeholder="Buscar..." name="buscar">
+                    <button class="btn btn-outline-secondary" type="submit">Buscar</button>
+                </form>
 
-         </div>
-      </div>
+                <ul class="navbar-nav ms-auto">
+                    @if (!(User?.Identity?.IsAuthenticated ?? false))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-action="Registrar" asp-controller="Cuenta">Registrarse</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-action="Login" asp-controller="Cuenta">Inicio sesion</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" id="userDropdown" data-bs-toggle="dropdown">
+                                @User.FindFirstValue(ClaimTypes.NameIdentifier)
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                    <a class="dropdown-item" asp-action="Perfil" asp-controller="Usuario">Mi perfil</a>
+                                </li>
+                                @if (User.IsInRole("Administrador"))
+                                {
+                                    <li>
+                                        <a class="dropdown-item" asp-action="Create" asp-controller="Post">Crear post</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" asp-action="Index" asp-controller="AdminUsuario">Administrar Usuarios</a>
+                                    </li>
+                                }
+                                <li>
+                                    <a class="dropdown-item" asp-action="CerrarSesion" asp-controller="Cuenta">Cerrar sesion</a>
+                                </li>
+                            </ul>
+                        </li>
+                    }
+
+                </ul>
+
+            </div>
+        </div>
 
     </nav>
 </header>

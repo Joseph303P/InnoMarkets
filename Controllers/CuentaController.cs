@@ -1,18 +1,15 @@
-using System.Data;
-using System.Data.SqlClient;
-using System.Net.Http.Headers;
-using System.Reflection.Metadata.Ecma335;
-using System.Security.Claims;
-using BCrypt.Net;
-using InnoMarkets.Data;
-using InnoMarkets.Data.Servicios;
-using InnoMarkets.Models;
-using Microsoft.AspNetCore.Authentication;
+﻿using InnoMasketss.Data.Servicios;
+using InnoMasketss.Data;
+using InnoMasketss.Models.ViewModels;
+using InnoMasketss.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authorization.Infrastructure;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
+using System.Data.SqlClient;
+using System.Data;
+using System.Security.Claims;
 
-namespace InnoMarkets.Controllers
+namespace InnoMasketss.Controllers
 {
     public class CuentaController : Controller
     {
@@ -20,7 +17,7 @@ namespace InnoMarkets.Controllers
 
         private readonly UsuarioServicio _usuarioServicio;
 
-        public CuentaController (Contexto con)
+        public CuentaController(Contexto con)
         {
             _contexto = con;
             _usuarioServicio = new UsuarioServicio(con);
@@ -30,7 +27,7 @@ namespace InnoMarkets.Controllers
         {
             return View();
         }
-        
+
         //Medida de seguraridad que nos ayuda a prevenir ataques ccrs
         [HttpPost, ValidateAntiForgeryToken]
 
@@ -48,32 +45,32 @@ namespace InnoMarkets.Controllers
                         using (var command = new SqlCommand("RegistrarUsuario", connection))
                         {
                             command.CommandType = CommandType.StoredProcedure;
-                            command.Parameters.AddWithValue("@Nomre", model.Nombre);
+                            command.Parameters.AddWithValue("@Nombre", model.Nombre);
                             command.Parameters.AddWithValue("@Apellido", model.Apellido);
                             command.Parameters.AddWithValue("@Correo", model.Correo);
                             string hashedPasswork = BCrypt.Net.BCrypt.HashPassword(model.Contrasena);  //Encriptar Contraseña
                             command.Parameters.AddWithValue("@Contrasena", hashedPasswork);
                             command.Parameters.AddWithValue("@NombreUsuario", model.NombreUsuario);
-                            DateTime fechaexpiracion = DateTime.UtcNow.AddMinutes(5);
+                            DateTime fechaexpiracion = DateTime.UtcNow.AddMinutes(10);
                             command.Parameters.AddWithValue("@FechaExpiracion", fechaexpiracion);
                             var token = Guid.NewGuid();
                             command.Parameters.AddWithValue("@Token", token);
-                            command .ExecuteNonQuery();
+                            command.ExecuteNonQuery();
 
                             Email email = new();
                             if (model.Correo != null)
-                            email.Enviar(model.Correo, token.ToString());
+                                email.Enviar(model.Correo, token.ToString());
                         }
                     }
                     return RedirectToAction("Token");
                 }
                 catch (SqlException ex)
                 {
-                    
+
                     if (ex.Number == 2627)
-                    ViewBag.Error = "El correo electorico y/o nombre de usuario ya existe!.";
+                        ViewBag.Error = "El correo electorico y/o nombre de usuario ya existe!.";
                     else
-                    ViewBag.Error = "Ocurrio al intentar ingresar al usuario.";
+                        ViewBag.Error = "Ocurrio al intentar ingresar al usuario.";
                     throw;
                 }
             }
@@ -86,38 +83,38 @@ namespace InnoMarkets.Controllers
 
             if (token != null)
             {
-              try
-              {
-                using (SqlConnection con = new SqlConnection(_contexto.Conexion))
+                try
                 {
-                    using (SqlCommand cmd = new SqlCommand("ActivarCuenta", con))
+                    using (SqlConnection con = new SqlConnection(_contexto.Conexion))
                     {
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@Token", token);
-                        DateTime fechaExpiracion = DateTime.UtcNow;
-                        cmd.Parameters.AddWithValue("@Fecha", fechaExpiracion);
-                        con.Open();
-                        var resultado = cmd.ExecuteScalar();
+                        using (SqlCommand cmd = new SqlCommand("ActivarCuenta", con))
+                        {
+                            cmd.CommandType = CommandType.StoredProcedure;
+                            cmd.Parameters.AddWithValue("@Token", token);
+                            DateTime fechaExpiracion = DateTime.UtcNow.AddMinutes(5);
+                            cmd.Parameters.AddWithValue("@Fecha", fechaExpiracion);
+                            con.Open();
+                            var resultado = cmd.ExecuteScalar();
 
-                        int activada = Convert.ToInt32(resultado);
-                        
-                        if (activada == 1)
-                        ViewBag["mensaje"] = "Su cuenta ha sido validada exitosamente";
-                        else
-                        ViewBag["mensaje"] = "Su enlace de activacion ha expirado";
+                            int activada = Convert.ToInt32(resultado);
 
-                        con.Close();
-                        
+                            if (activada == 1)
+                                ViewBag["mensaje"] = "Su cuenta ha sido validada exitosamente";
+                            else
+                                ViewBag["mensaje"] = "Su enlace de activacion ha expirado";
+
+                            con.Close();
+
+                        }
                     }
                 }
-              }
-              catch (System.Exception e)
-              {
-                
-                ViewData["mensaje"] = e.Message;
-                return View();
-              }  
-              
+                catch (System.Exception e)
+                {
+
+                    ViewData["mensaje"] = e.Message;
+                    return View();
+                }
+
             }
             else
             {
@@ -131,11 +128,18 @@ namespace InnoMarkets.Controllers
         //Si ya esta autenticado
         public IActionResult Login()
         {
-            ClaimsPrincipal c = HttpContext.User;
-            if (c.Identity != null)
+            try
             {
-              if (c.Identity.IsAuthenticated)
-            return RedirectToAction("Index", "Home");  
+                ClaimsPrincipal c = HttpContext.User;
+                if (c.Identity != null)
+                {
+                    if (c.Identity.IsAuthenticated)
+                        return RedirectToAction("Index", "Home");
+                }
+            }
+            catch (System.Exception ex)
+            {
+                ViewBag.Error = ex.Message;
             }
             return View();
         }
@@ -144,7 +148,7 @@ namespace InnoMarkets.Controllers
         public async Task<IActionResult> Login(LoginViewModels model)
         {
             if (!ModelState.IsValid)
-            return View(model); //En caso que no sea valido retonara a la vista con  el modelo
+                return View(model); //En caso que no sea valido retonara a la vista con  el modelo
 
             try
             {
@@ -154,35 +158,35 @@ namespace InnoMarkets.Controllers
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@Correo", model.Correo);
-                        con.Open(); 
+                        con.Open();
                         try
                         {
-                            using (var dr=cmd.ExecuteReader())
+                            using (var dr = cmd.ExecuteReader())
                             {
                                 if (dr.Read())
                                 {
-                                    bool passwordMatch=BCrypt.Net.BCrypt.Verify(model.Contrasena, dr["Contrasena"].ToString()); //
+                                    bool passwordMatch = BCrypt.Net.BCrypt.Verify(model.Contrasena, dr["Contrasena"].ToString()); //
                                     if (passwordMatch)
                                     {
                                         DateTime fechaexpiracion = DateTime.UtcNow;
 
                                         //Reenvio de un nuevo Token y el tiempo de expiracion ya caduco
-                                        if (!(bool)dr["Estado"] && dr["FechaExpiracion"].ToString()!=fechaexpiracion.ToString())
+                                        if (!(bool)dr["Estado"] && dr["FechaExpiracion"].ToString() != fechaexpiracion.ToString())
                                         {
                                             if (model.Correo != null)
-                                            _usuarioServicio.ActualizarToken(model.Correo);
+                                                _usuarioServicio.ActualizarToken(model.Correo);
 
-                                                ViewBag.Error = "Su cuenta no ha sido activada, se ha reenviado un correo de activacio, verique su bandeja";
+                                            ViewBag.Error = "Su cuenta no ha sido activada, se ha reenviado un correo de activacio, verique su bandeja";
 
-                                            
+
                                         }
-                                        else if(!(bool)dr["Estado"])
-                                            ViewBag.Error= "Su cuenta no ha sido activada, verifique su bandeja de entrada";
+                                        else if (!(bool)dr["Estado"])
+                                            ViewBag.Error = "Su cuenta no ha sido activada, verifique su bandeja de entrada";
 
-                                            //Si el procedimiento se hizo correctamente y la cuenta esta activa
+                                        //Si el procedimiento se hizo correctamente y la cuenta esta activa
                                         else
                                         {
-                                            string nombreusuario = dr["NombreUsuario"].ToString();
+                                            string? nombreusuario = dr["NombreUsuario"].ToString();
                                             int idUsuario = (int)dr["UsuariosId"];
 
                                             if (nombreusuario != null)
@@ -191,21 +195,21 @@ namespace InnoMarkets.Controllers
                                                 var claims = new List<Claim>()
                                                 {
                                                     new Claim(ClaimTypes.NameIdentifier, nombreusuario),
-                                                    new Claim("IdUsuario", idUsuario.ToString())
+                                                    new Claim("UsuariosId", idUsuario.ToString())
                                                 };
-                                                
+
                                                 //Definiendo rol del usuario
                                                 int rolId = (int)dr["RolId"];
-                                                string rolNombre = rolId == 1? "Administrador" : "Usuario";
+                                                string rolNombre = rolId == 1 ? "Administrador" : "Usuario";
                                                 claims.Add(new Claim(ClaimTypes.Role, rolNombre));
 
-                                                var identity= new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                                                var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                                                 var propiedades = new AuthenticationProperties
                                                 {
                                                     //Opcion de mantener cuenta activa 
                                                     AllowRefresh = true,
                                                     IsPersistent = model.MantenerActivo,
-                                                    ExpiresUtc = DateTimeOffset.UtcNow.Add(model.MantenerActivo ? TimeSpan.FromDays(1): TimeSpan.FromMinutes(5))
+                                                    ExpiresUtc = DateTimeOffset.UtcNow.Add(model.MantenerActivo ? TimeSpan.FromDays(1) : TimeSpan.FromMinutes(5))
 
                                                 };
 
@@ -216,13 +220,13 @@ namespace InnoMarkets.Controllers
                                     }
                                 }
                                 else
-                                ViewBag.Error = "Correo no registrado";
+                                    ViewBag.Error = "Correo no registrado";
                                 dr.Close();
                             }
                         }
                         finally
                         {
-                            if (cmd !=  null)
+                            if (cmd != null)
                             {
                                 cmd.Dispose();
                             }
@@ -232,15 +236,15 @@ namespace InnoMarkets.Controllers
             }
             catch (System.Exception ex)
             {
-                
+
                 ViewBag.Error = ex.Message;
             }
             return View(model);
-                
-            
-        }        
 
-        
+
+        }
+
+
         //Metodo para cerrar sesion
         public async Task<IActionResult> CerrarSesion()
         {
@@ -248,5 +252,4 @@ namespace InnoMarkets.Controllers
             return RedirectToAction("Index", "Home");
         }
     }
-    
 }

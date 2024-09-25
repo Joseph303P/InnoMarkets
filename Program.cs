@@ -1,20 +1,22 @@
-using InnoMarkets.Data;
+using InnoMasketss.Data;
 using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddControllersWithViews();
 //Esta Clase funciona para Interacctuar con la base de datos en la que se almacena los datos de la pagina
 builder.Services.AddSingleton(new Contexto(builder.Configuration.GetConnectionString("conexion")));
 //En caso que no exista una Autenticacion, el usuario tenga que autenticarse
 //Sistema de Logeo Atrevez de Cooki
-builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(option=>
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(option =>
 {
-    option.LoginPath="/Cuenta/Login";
+    option.LoginPath = "/Cuenta/Login";
 });
 
-var app = builder.Build(); 
+var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -31,7 +33,6 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 //Ridirige al usuario en caso que no tenga un acceso a un Controlador no autorizado
-app.UseStatusCodePagesWithRedirects("~/Homd/Index");
 
 app.MapControllerRoute(
     name: "default",

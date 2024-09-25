@@ -1,0 +1,70 @@
+﻿@using InnoMasketss.Data.Enums
+@model Post
+
+@{
+    ViewData["Title"] = "Nueva publicacion";
+}
+
+@if (ViewBag.Error!=null)
+{
+    <div class="alert alert-info" role="alert">
+        @ViewBag.Error
+    </div>
+}
+
+<h2 class="mb-4">Nueva Publicacion</h2>
+<form asp-action="Create" method="post">
+    <div class="form-group mb-4">
+        <label for="title-input">Titulo</label>
+        <input id="title-input" asp-for="Titulo" class="form-control">
+        <span asp-validation-for="Titulo" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-4">
+        <label for="category-input">Categoria</label>
+        <select id="category-input" asp-for="Categoria" class="form-control">
+            @foreach (var categoria in CategoriaEnum.GetValues(typeof(CategoriaEnum)))
+            {
+                <option value="@categoria">@categoria.ToString()</option>
+            }
+        </select>
+        <span asp-validation-for="Categoria" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-5">
+        <label for="content-input">Contenido</label>
+        @if (Model != null)
+        {
+            <textarea id="content-editor" name="Contenido" class="form-control">@Html.Raw(Model.Contenido)</textarea>
+        }
+        else
+        {
+            <textarea id="content-editor" name="Contenido" class="form-control"></textarea>
+
+        }
+        <span asp-validation-for="Contenido" class="text-danger"></span>
+        <div class="d-grid gap-2 col-md-2 mx-auto">
+            <button type="submit" class="btn btn-success btn-lg">Crear publicacion</button>
+        </div>
+    </div>
+</form>
+
+
+@section Scripts
+{
+    <script src="https://cdn.tiny.cloud/1/coocossbio4k5vl3jfoiz55bpz2p5dg05yz2mywsk2a2pac0/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
+    tinymce.init({
+        selector: 'textarea#content-editor',
+        height: 500,
+        plugins: [
+            'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+            'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+            'insertdatetime', 'media', 'table', 'help', 'wordcount'
+        ],
+        toolbar: 'undo redo | blocks | ' +
+            'bold italic backcolor | alignleft aligncenter ' +
+            'alignright alignjustify | bullist numlist outdent indent | ' +
+            'removeformat | help',
+        content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+    });
+</script>
+}

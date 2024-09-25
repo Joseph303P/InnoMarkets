@@ -1,0 +1,145 @@
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\bin\Debug\net6.0\appsettings.json
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\bin\Debug\net6.0\InnoMasketss.staticwebassets.runtime.json
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\bin\Debug\net6.0\InnoMasketss.exe
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\bin\Debug\net6.0\InnoMasketss.deps.json
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\bin\Debug\net6.0\InnoMasketss.runtimeconfig.json
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\bin\Debug\net6.0\InnoMasketss.dll
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\bin\Debug\net6.0\InnoMasketss.pdb
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\obj\Debug\net6.0\InnoMasketss.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\obj\Debug\net6.0\InnoMasketss.AssemblyInfoInputs.cache
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\obj\Debug\net6.0\InnoMasketss.AssemblyInfo.cs
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\obj\Debug\net6.0\InnoMasketss.csproj.CoreCompileInputs.cache
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\obj\Debug\net6.0\InnoMasketss.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\obj\Debug\net6.0\InnoMasketss.RazorAssemblyInfo.cache
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\obj\Debug\net6.0\InnoMasketss.RazorAssemblyInfo.cs
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\obj\Debug\net6.0\staticwebassets\msbuild.InnoMasketss.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\obj\Debug\net6.0\staticwebassets\msbuild.build.InnoMasketss.props
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.InnoMasketss.props
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.InnoMasketss.props
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\obj\Debug\net6.0\scopedcss\bundle\InnoMasketss.styles.css
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\obj\Debug\net6.0\scopedcss\projectbundle\InnoMasketss.bundle.scp.css
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\obj\Debug\net6.0\InnoMasketss.dll
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\obj\Debug\net6.0\refint\InnoMasketss.dll
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\obj\Debug\net6.0\InnoMasketss.pdb
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\obj\Debug\net6.0\InnoMasketss.genruntimeconfig.cache
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\obj\Debug\net6.0\ref\InnoMasketss.dll
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\obj\Debug\net6.0\InnoMasketss.csproj.AssemblyReference.cache
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\obj\Debug\net6.0\InnoMasketss.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\bin\Debug\net6.0\BCrypt.Net-Next.dll
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\bin\Debug\net6.0\System.Data.SqlClient.dll
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\bin\Debug\net6.0\X.PagedList.dll
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\bin\Debug\net6.0\X.PagedList.Mvc.Common.dll
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\bin\Debug\net6.0\X.PagedList.Mvc.Core.dll
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\obj\Debug\net6.0\InnoMask.102AC0FD.Up2Date
+C:\Users\USUARIO\Desktop\InnoMarketsVSE\InnoMasketss\InnoMasketss\obj\Debug\net6.0\InnoMasketss.sourcelink.json
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\bin\Debug\net6.0\appsettings.json
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\bin\Debug\net6.0\InnoMasketss.staticwebassets.runtime.json
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\bin\Debug\net6.0\InnoMasketss.exe
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\bin\Debug\net6.0\InnoMasketss.deps.json
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\bin\Debug\net6.0\InnoMasketss.runtimeconfig.json
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\bin\Debug\net6.0\InnoMasketss.dll
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\bin\Debug\net6.0\InnoMasketss.pdb
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\bin\Debug\net6.0\BCrypt.Net-Next.dll
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\bin\Debug\net6.0\System.Data.SqlClient.dll
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\bin\Debug\net6.0\X.PagedList.dll
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\bin\Debug\net6.0\X.PagedList.Mvc.Common.dll
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\bin\Debug\net6.0\X.PagedList.Mvc.Core.dll
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\obj\Debug\net6.0\InnoMasketss.csproj.AssemblyReference.cache
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\obj\Debug\net6.0\InnoMasketss.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\obj\Debug\net6.0\InnoMasketss.AssemblyInfoInputs.cache
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\obj\Debug\net6.0\InnoMasketss.AssemblyInfo.cs
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\obj\Debug\net6.0\InnoMasketss.csproj.CoreCompileInputs.cache
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\obj\Debug\net6.0\InnoMasketss.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\obj\Debug\net6.0\InnoMasketss.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\obj\Debug\net6.0\InnoMasketss.RazorAssemblyInfo.cache
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\obj\Debug\net6.0\InnoMasketss.RazorAssemblyInfo.cs
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\obj\Debug\net6.0\staticwebassets\msbuild.InnoMasketss.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\obj\Debug\net6.0\staticwebassets\msbuild.build.InnoMasketss.props
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.InnoMasketss.props
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.InnoMasketss.props
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\obj\Debug\net6.0\scopedcss\bundle\InnoMasketss.styles.css
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\obj\Debug\net6.0\scopedcss\projectbundle\InnoMasketss.bundle.scp.css
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\obj\Debug\net6.0\InnoMask.102AC0FD.Up2Date
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\obj\Debug\net6.0\InnoMasketss.dll
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\obj\Debug\net6.0\refint\InnoMasketss.dll
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\obj\Debug\net6.0\InnoMasketss.pdb
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\obj\Debug\net6.0\InnoMasketss.genruntimeconfig.cache
+C:\Users\USUARIO\Desktop\Respaldo de Proyecto\Respaldo de Proyecto\Respaldo del proyecto x2\InnoMasketss\InnoMasketss\obj\Debug\net6.0\ref\InnoMasketss.dll
+C:\Users\USUARIO\Desktop\InnoMasketss\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\USUARIO\Desktop\InnoMasketss\bin\Debug\net6.0\appsettings.json
+C:\Users\USUARIO\Desktop\InnoMasketss\bin\Debug\net6.0\InnoMasketss.staticwebassets.runtime.json
+C:\Users\USUARIO\Desktop\InnoMasketss\bin\Debug\net6.0\InnoMasketss.exe
+C:\Users\USUARIO\Desktop\InnoMasketss\bin\Debug\net6.0\InnoMasketss.deps.json
+C:\Users\USUARIO\Desktop\InnoMasketss\bin\Debug\net6.0\InnoMasketss.runtimeconfig.json
+C:\Users\USUARIO\Desktop\InnoMasketss\bin\Debug\net6.0\InnoMasketss.dll
+C:\Users\USUARIO\Desktop\InnoMasketss\bin\Debug\net6.0\InnoMasketss.pdb
+C:\Users\USUARIO\Desktop\InnoMasketss\bin\Debug\net6.0\BCrypt.Net-Next.dll
+C:\Users\USUARIO\Desktop\InnoMasketss\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\USUARIO\Desktop\InnoMasketss\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\USUARIO\Desktop\InnoMasketss\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\USUARIO\Desktop\InnoMasketss\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\USUARIO\Desktop\InnoMasketss\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\USUARIO\Desktop\InnoMasketss\bin\Debug\net6.0\System.Data.SqlClient.dll
+C:\Users\USUARIO\Desktop\InnoMasketss\bin\Debug\net6.0\X.PagedList.dll
+C:\Users\USUARIO\Desktop\InnoMasketss\bin\Debug\net6.0\X.PagedList.Mvc.Common.dll
+C:\Users\USUARIO\Desktop\InnoMasketss\bin\Debug\net6.0\X.PagedList.Mvc.Core.dll
+C:\Users\USUARIO\Desktop\InnoMasketss\bin\Debug\net6.0\runtimes\win-arm64\native\sni.dll
+C:\Users\USUARIO\Desktop\InnoMasketss\bin\Debug\net6.0\runtimes\win-x64\native\sni.dll
+C:\Users\USUARIO\Desktop\InnoMasketss\bin\Debug\net6.0\runtimes\win-x86\native\sni.dll
+C:\Users\USUARIO\Desktop\InnoMasketss\bin\Debug\net6.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\USUARIO\Desktop\InnoMasketss\bin\Debug\net6.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\USUARIO\Desktop\InnoMasketss\obj\Debug\net6.0\InnoMasketss.csproj.AssemblyReference.cache
+C:\Users\USUARIO\Desktop\InnoMasketss\obj\Debug\net6.0\InnoMasketss.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USUARIO\Desktop\InnoMasketss\obj\Debug\net6.0\InnoMasketss.AssemblyInfoInputs.cache
+C:\Users\USUARIO\Desktop\InnoMasketss\obj\Debug\net6.0\InnoMasketss.AssemblyInfo.cs
+C:\Users\USUARIO\Desktop\InnoMasketss\obj\Debug\net6.0\InnoMasketss.csproj.CoreCompileInputs.cache
+C:\Users\USUARIO\Desktop\InnoMasketss\obj\Debug\net6.0\InnoMasketss.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\USUARIO\Desktop\InnoMasketss\obj\Debug\net6.0\InnoMasketss.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\USUARIO\Desktop\InnoMasketss\obj\Debug\net6.0\InnoMasketss.RazorAssemblyInfo.cache
+C:\Users\USUARIO\Desktop\InnoMasketss\obj\Debug\net6.0\InnoMasketss.RazorAssemblyInfo.cs
+C:\Users\USUARIO\Desktop\InnoMasketss\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\USUARIO\Desktop\InnoMasketss\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\USUARIO\Desktop\InnoMasketss\obj\Debug\net6.0\staticwebassets\msbuild.InnoMasketss.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\USUARIO\Desktop\InnoMasketss\obj\Debug\net6.0\staticwebassets\msbuild.build.InnoMasketss.props
+C:\Users\USUARIO\Desktop\InnoMasketss\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.InnoMasketss.props
+C:\Users\USUARIO\Desktop\InnoMasketss\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.InnoMasketss.props
+C:\Users\USUARIO\Desktop\InnoMasketss\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\USUARIO\Desktop\InnoMasketss\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\USUARIO\Desktop\InnoMasketss\obj\Debug\net6.0\scopedcss\bundle\InnoMasketss.styles.css
+C:\Users\USUARIO\Desktop\InnoMasketss\obj\Debug\net6.0\scopedcss\projectbundle\InnoMasketss.bundle.scp.css
+C:\Users\USUARIO\Desktop\InnoMasketss\obj\Debug\net6.0\InnoMask.102AC0FD.Up2Date
+C:\Users\USUARIO\Desktop\InnoMasketss\obj\Debug\net6.0\InnoMasketss.dll
+C:\Users\USUARIO\Desktop\InnoMasketss\obj\Debug\net6.0\refint\InnoMasketss.dll
+C:\Users\USUARIO\Desktop\InnoMasketss\obj\Debug\net6.0\InnoMasketss.pdb
+C:\Users\USUARIO\Desktop\InnoMasketss\obj\Debug\net6.0\InnoMasketss.genruntimeconfig.cache
+C:\Users\USUARIO\Desktop\InnoMasketss\obj\Debug\net6.0\ref\InnoMasketss.dll

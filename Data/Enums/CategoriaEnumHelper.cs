@@ -1,17 +1,17 @@
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Reflection;
 
-namespace InnoMarkets.Data.Enums;
-
-//Obtiene la Descripcion de la categoria a trevez de un atributo descripcion
-public class CategoriaEnumHelper
+namespace InnoMasketss.Data.Enums
 {
-    public static string ObtenerDescripcion(CategoriaEnum categoria)
+    public class CategoriaEnumHelper
     {
-        FieldInfo field = categoria.GetType().GetField(categoria.ToString());
+        public static string ObtenerDescripcion(CategoriaEnum categoria)
+        {
+            FieldInfo? field = categoria.GetType().GetField(categoria.ToString());
 
-        DescriptionAttribute attribute = field.GetCustomAttribute<DescriptionAttribute>();
+            DescriptionAttribute? attribute = field?.GetCustomAttribute<DescriptionAttribute>();
 
-        return attribute != null ? attribute.Description : categoria.ToString();
+            return attribute != null ? attribute.Description : categoria.ToString();
+        }
     }
 }

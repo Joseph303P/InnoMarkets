@@ -1,19 +1,16 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - InnoMarkets</title>
+    <title>@ViewData["Title"] - InnoMasketss</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/InnoMarkets.styles.css" asp-append-version="true" />
-    <script src="https://kit.fontawesome.com/4b5aae3091.js" crossorigin="anonymous"></script></head>
+    <link rel="stylesheet" href="~/InnoMasketss.styles.css" asp-append-version="true" />
+    <script src="https://kit.fontawesome.com/4b5aae3091.js" crossorigin="anonymous"></script>
+</head>
 <body>
-    
-
     @await Html.PartialAsync("~/Views/Shared/Partials/_Header.cshtml")
-
     <div class="container py-5 d-flex flex-column min-vh-100">
         <main role="main">
             @RenderBody()
@@ -44,18 +41,18 @@
                     <form class="form-inLine">
                         <div class="input-group">
                             <input type="email" class="form-control" placeholder="Introduce tu email">
-                            <button class="btn btn-primary" type="submit"><i class="fa fa-paper-plane"
-                            aria-hidden="true"></i></button>
+                            <button class="btn btn-primary" type="submit">
+                                <i class="fa fa-paper-plane"
+                                   aria-hidden="true"></i>
+                            </button>
                         </div>
                     </form>
                 </div>
             </div>
             <hr class="my-4">
-            <p class="text-center small mb-0">&copy; 2023 - InnoMarkets. Todos los derechos reservados</p> 
+            <p class="text-center small mb-0">&copy; 2023 - InnoMarkets. Todos los derechos reservados</p>
         </div>
     </footer>
-        
-    
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

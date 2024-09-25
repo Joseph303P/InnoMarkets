@@ -1,8 +1,8 @@
+﻿using InnoMasketss.Models;
 using System.Data.SqlClient;
 using System.Data;
-using InnoMarkets.Models;
 
-namespace InnoMarkets.Data.Servicios
+namespace InnoMasketss.Data.Servicios
 {
     public class UsuarioServicio
     {
@@ -15,7 +15,7 @@ namespace InnoMarkets.Data.Servicios
 
         public void ActualizarToken(string correo)
         {
-            using (SqlConnection con = new (_contexto.Conexion))
+            using (SqlConnection con = new(_contexto.Conexion))
             {
                 using (SqlCommand cmd = new("ActualizarToken", con))
                 {
@@ -31,7 +31,7 @@ namespace InnoMarkets.Data.Servicios
 
                     Email email = new();
                     if (correo != null)
-                    email.Enviar(correo, token.ToString());
+                        email.Enviar(correo, token.ToString());
 
                 }
             }
@@ -63,7 +63,7 @@ namespace InnoMarkets.Data.Servicios
         public List<Usuario> ListarUsuarios()
         {
             var usuarios = new List<Usuario>();
-            using (SqlConnection con = new (_contexto.Conexion))
+            using (SqlConnection con = new(_contexto.Conexion))
             {
                 using (SqlCommand cmd = new("ListarUsuarios", con))
                 {
@@ -85,13 +85,14 @@ namespace InnoMarkets.Data.Servicios
                             Token = rdr["Token"].ToString(),
                             FechaExpiracion = Convert.ToDateTime(rdr["FechaExpiracion"])
                         };
-                        
+                        usuarios.Add(usuario);
+
                     }
                 }
             }
             return usuarios;
         }
-        
+
         public Usuario ObtenerUsuarioId(int id)
         {
             Usuario usuario = new();
@@ -114,7 +115,7 @@ namespace InnoMarkets.Data.Servicios
                             Apellido = rdr["Apellido"].ToString(),
                             Correo = rdr["Correo"].ToString(),
                             Contrasena = rdr["Contrasena"].ToString(),
-                            RolId = (int) rdr["RolId"],
+                            RolId = (int)rdr["RolId"],
                             NombreUsuario = rdr["NombreUsuario"].ToString(),
                             Estado = Convert.ToBoolean(rdr["Estado"]),
                             Token = rdr["Token"].ToString(),
@@ -125,7 +126,7 @@ namespace InnoMarkets.Data.Servicios
                 }
             }
             return usuario;
-            
+
         }
     }
 }

@@ -1,0 +1,58 @@
+﻿@model Usuario
+
+@{
+    ViewData["Title"] = "Eliminar usuario";
+}
+
+@if (ViewBag.Error!=null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.Error
+    </div>
+}
+
+<h2>Eliminar usuario</h2>
+<h3>¿Estás seguro que deseas eliminar este usuario?</h3>
+<div>
+    <h4>Usuario seleccionado</h4>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Apellido)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Apellido)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Correo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Correo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreUsuario)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NombreUsuario)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm("Delete", "AdminUsuario", new { id = Model.UsuariosId }, FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            <input type="submit" value="Eliminar" class="btn btn-danger" />
+        </div>
+    }
+
+    <div>
+        <a href="@Url.Action("Index", "AdminUsuario")" class="btn btn-secondary">Regresar al listado</a>
+    </div>
+</div>
