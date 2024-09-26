@@ -1,0 +1,227 @@
+﻿@model InnoMasketss.Models.ViewModels.PostDetalleViewModels
+
+@if (ViewBag.Error!=null)
+{
+    <div class="alert alert-info" role="alert">
+        @ViewBag.Error
+    </div>
+}
+
+@if (Model.Post!=null && User.Identity!=null)
+{
+    ViewData["Title"] = Model.Post.Titulo;
+
+    <h1>@Model.Post.Titulo</h1>
+    <p class="text-muted">@Model.Post.Categoria.ToString()</p>
+    <p class="text-muted">@Model.Post.FechaCreacion.ToShortDateString()</p>
+
+    @if (User.IsInRole("Administrador"))
+    {
+        <form asp-action="Delete" asp-route-id="@Model.Post.PostId" method="post">
+            <a asp-action="Update" asp-route-id="@Model.Post.PostId" class="btn btn-warning">
+                <i class="fa-regular fa-edit"></i>
+            </a>
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirm-delete-modal">
+                <i class="far fa-trash-alt"></i>
+            </button>
+
+            <div class="modal fade" id="confirm-delete-modal" tabindex="-1" aria-labelledby="confirm-delete-modal-label" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="confirm-delete-modal-label">Cofirmar eliminacion</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ¿Estas seguro que deseas eliminar esta publicacion?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar modal</button>
+                            <button type="submit" class="btn btn-danger">Eliminar publicacion</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    }
+
+    <hr>
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-md-8">
+                <div>@Html.Raw(@Model.Post.Contenido)</div>
+
+                <hr>
+                <div class="container">
+                    <div class="container mt-5">
+
+                        <h2 class="mb-4">Comentarios</h2>
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Agregar un comentario:</h5>
+                                <form asp-action="AgregarComentario" asp-controller="Post">
+                                    <div class="form-group">
+                                        <textarea id="comentario" name="comentario" class="form-control" rows="3"></textarea>
+                                    </div>
+                                    <input type="hidden" name="postId" value="@Model.Post.PostId" />
+                                    @if (!User.Identity.IsAuthenticated)
+                                    {
+                                        <p class="alert alert-warning">Para agregar un comentario, debes iniciar sesion primero.</p>
+                                    }
+                                    else
+                                    {
+                                        <button type="submit" class="btn btn-primary">Agregar comentario</button>
+                                    }
+                                </form>
+                            </div>
+                        </div>
+
+                        @* Comentarios Principales *@
+                        @if (Model.ComentariosPrincipales!=null && Model.ComentariosPrincipales.Count>0)
+                        {
+                           <ul class="list-unstyled">
+                                @foreach (var comment in Model.ComentariosPrincipales)
+                                {
+                                <li class="mb-4">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title"> @comment.NombreUsuario
+                                                <small class="text-muted text-sm-end-small">@comment.FechaCreacion</small>
+                                            </h5>
+                                            <p class="card-text">@comment.Contenido</p>
+
+                                            <a href="#" data-bs-toggle="model" data-bs-target="#commentModal_@comment.ComentarioId">Responder</a>
+
+                                            <div class="modal fade" id="commentModal_@comment.ComentarioId" tabindex="-1" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h1 class="modal-title fs-5">Responder</h1>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                                                        </div>
+                                                        @if (!User.Identity.IsAuthenticated)
+                                                        {
+                                                            <p class="alert alert-warning">Para responder a un comentario, debes iniciar sesion primero.</p>
+                                                        }
+                                                        else
+                                                        {
+                                                            <form method="post" asp-action="AgregarComentario" class="mt-4">
+                                                                <div class="modal-body">
+                                                                    <input type="hidden" name="postId" value="@Model.Post.PostId" />
+                                                                    <input type="hidden" name="comentariopadreid" value="@comment.ComentarioId" />
+                                                                    <div class="form-group">
+                                                                        <label for="comentario">Comentario</label>
+                                                                        <textarea name="comentario" id="comentario" class="form-control"></textarea>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary">Cerrar modal</button>
+                                                                    <button type="submit" class="btn btn-primary">Enviar respuesta</button>
+                                                                </div>
+                                                            </form>
+                                                        }
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                           @* Comentarios Hijos *@
+                                                @if (Model.ComentariosHijos != null && Model.ComentariosHijos.Count > 0)
+                                                {
+                                                    <ul class="list-unstyled">
+                                                        @foreach (var chilcomment in Model.ComentariosHijos)
+                                                        {
+                                                            <li class="mb-4">
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                        <h5 class="card-title">
+                                                                            @chilcomment.NombreUsuario
+                                                                            <small class="text-muted text-sm-end-small">@chilcomment.FechaCreacion</small>
+                                                                        </h5>
+                                                                        <p class="card-text">@chilcomment.Contenido</p>
+
+                                                                        <a href="#" data-bs-toggle="model" data-bs-target="#commentModal2_@chilcomment.ComentarioId">Responder</a>
+
+                                                                        <div class="modal fade" id="commentModal2_@chilcomment.ComentarioId" tabindex="-1" aria-hidden="true">
+                                                                            <div class="modal-dialog">
+                                                                                <div class="modal-content">
+                                                                                    <div class="modal-header">
+                                                                                        <h1 class="modal-title fs-5">Responder</h1>
+                                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                                                                                    </div>
+                                                                                    @if (!User.Identity.IsAuthenticated)
+                                                                                    {
+                                                                                        <p class="alert alert-warning">Para responder a un comentario, debes iniciar sesion primero.</p>
+                                                                                    }
+                                                                                    else
+                                                                                    {
+                                                                                        <form method="post" asp-action="AgregarComentario" class="mt-4">
+                                                                                            <div class="modal-body">
+                                                                                                <input type="hidden" name="postId" value="@Model.Post.PostId" />
+                                                                                                <input type="hidden" name="comentariopadreid" value="@chilcomment.ComentarioId" />
+                                                                                                <div class="form-group">
+                                                                                                    <label for="comentario">Comentario</label>
+                                                                                                    <textarea name="comentario" id="comentario" class="form-control"></textarea>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="modal-footer">
+                                                                                                <button type="button" class="btn btn-secondary">Cerrar modal</button>
+                                                                                                <button type="submit" class="btn btn-primary">Enviar respuesta</button>
+                                                                                            </div>
+                                                                                        </form>
+                                                                                    }
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        @* Comentarios Nietos *@
+
+                                                                        @await Html.PartialAsync("~/Views/Shared/Partials/_GrandChildComment.cshtml")
+
+                                                                        @* Fin de comentarios Nietos *@
+
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        }
+                                                    </ul>
+                                                }
+
+                                           @* Fin de comentarios Hijos *@
+
+                                        </div>
+                                    </div>
+                                </li>
+                                }
+                            </ul>
+                        }
+                        else
+                        {
+                            <p>No hay comentarios aun.</p>
+                        }
+
+                        @* Fin de Comentarios Principales *@
+
+                    </div>
+                </div>
+            </div>
+            @* Post reciente *@
+
+            <div class="col-md-4 mb-5">
+                <div class="position-sticky sticky-top" style="top:2rem">
+                    <h4 class="mb-3">Ultimas 10 Publicaciones</h4>
+                    <div class="list-group mb-3">
+                        @if (Model.PostRecientes!= null)
+                        {
+                            @foreach (var post in Model.PostRecientes)
+                            {
+                                <a class="list-group-item list-group-item-action" href="@Url.Action("Details", "Post", new{id=post.PostId})">@post.Titulo</a>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

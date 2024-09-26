@@ -1,0 +1,45 @@
+﻿@model Usuario
+
+@{
+    ViewData["Title"] = "Editar Usuario";
+}
+
+<h1>Editar usuario existente</h1>
+@if (ViewBag.Error!=null)
+{
+   <div class="alert alert-danger" role="alert">
+       @ViewBag.Error
+   </div>
+}
+
+<form method="post" asp-action="Edit">
+    <input type="hidden" asp-for="UsuariosId"/>
+    <div class="form-group">
+        <label>Nombre</label>
+        <input asp-for="Nombre" disable class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Apellido</label>
+        <input asp-for="Apellido" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Correo</label>
+        <input asp-for="Correo" disabled type="email" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Rol</label>
+        <input asp-for="RolId" asp-items="@ViewBag.Roles" class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Nombre de Usuario</label>
+        <input asp-for="NombreUsuario" disabled class="form-control">
+    </div>
+    <div class="form-group">
+        <label>Estado</label>
+        <input asp-for="Estado" class="form-check-input">
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-success">Guardar cambios</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </div>
+</form>

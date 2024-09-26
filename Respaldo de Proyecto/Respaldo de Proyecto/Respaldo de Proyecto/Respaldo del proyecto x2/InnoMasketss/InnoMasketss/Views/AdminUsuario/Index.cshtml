@@ -1,0 +1,98 @@
+﻿@using System.Linq
+@model X.PagedList.IPagedList<InnoMasketss.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Lista de usuarios";
+}
+
+@if (ViewBag.Error!=null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.Error
+    </div>
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Crear nuevo usuario</a>
+</p>
+
+<form asp-controller="AdminUsuario" asp-action="Index" method="get">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Buscar por correo o nombre de usuario" name="buscar" />
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="submit">Buscar</button>
+        </div>
+    </div>
+</form>
+
+@if (Model.Count>0)
+{
+   <table class="table">
+       <thead> 
+           <tr>
+               <th>Nombre de usuario</th>
+               <th>Correo</th>
+               <th>Rol</th>
+               <th>Acciones</th>
+           </tr>
+       </thead>
+
+       <tbody>
+            @foreach (var usuario in Model)
+            {
+                <tr>
+                    <td>@usuario.NombreUsuario</td>
+                    <td>@usuario.Correo</td>
+                    <td>
+                        @if (ViewBag.Roles != null)
+                        {
+                            var rol = ((List<SelectListItem>)ViewBag.Roles).FirstOrDefault(r => r.Value == usuario.RolId.ToString());
+                            if (rol != null)
+                            {
+                                @rol.Text
+                            }
+                        }
+
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@usuario.UsuariosId">Editar</a>
+                        <a asp-action="Delete" asp-route-id="@usuario.UsuariosId">Eliminar</a>
+                    </td>
+                </tr>
+            }
+
+       </tbody>
+
+   </table>
+
+   <div class="row">
+            <div class="col-md-12">
+               Página @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) de @Model.PageCount<nav>
+                    <ul class="pagination">
+                        <li class="page-item @(Model.PageNumber == 1 ? "disabled" : "" )">
+                            <a class="page-link" href="@Url.Action("Index", new { pagina=Model.PageNumber -1, buscar=ViewData["buscar"] })" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        @for(int i=1; i<=Model.PageCount; i++) 
+                        { <li class="page-item @(Model.PageNumber == i ? "active" : "")">
+                              <a class="page-link" href="@Url.Action("Index", new { pagina=i, buscar=ViewData["buscar"] })">@i</a>
+                          </li>
+                        }
+                        <li class="page-item @(Model.PageNumber == Model.PageCount ? "disabled" : "")">
+                            <a class="page-link" href="@Url.Action("Index", new {pagina=Model.PageNumber + 1, buscar=ViewData["buscar"] })" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+
+                        </li>
+                    </ul>
+                    </nav>
+            </div>
+   </div>
+}
+else
+{    //Crear un Boton de Recargar Vista
+    <p>Nose encontraron usuarios.</p>
+}

@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Validacion";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center alert-info">@ViewData["mensaje"]</h1>
+    <div class="row mt-5">
+        <div class="col-md-6 offset-md-3">
+            <div class="text-center">
+                <a asp-action="Registrar" asp-controller="Cuenta" class="btn btn-primary btn-lg btn-block">
+                    <i class="fas fa-user-plus"></i>Registrarse
+                </a>
+                <a asp-action="Login" asp-controller="Cuenta" class="btn btn-secundary btn-lg btn-block">
+                    <i class="fas fa-sign-in-alt"></i>Iniciar sesion
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

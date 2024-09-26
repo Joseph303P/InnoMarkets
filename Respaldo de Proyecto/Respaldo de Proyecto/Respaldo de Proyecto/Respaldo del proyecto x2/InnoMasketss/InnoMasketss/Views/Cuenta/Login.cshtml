@@ -1,0 +1,42 @@
+﻿@model InnoMasketss.Models.ViewModels.LoginViewModels
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-primary text-white text-center">
+                    <h2>Inicio de Sesion</h2>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Login" method="post" asp-controller="Cuenta">
+                        <div class="form-group">
+                            <label for="Correo">Correo Electronico</label>
+                            <input type="email" id="Correo" asp-for="Correo" class="form-control" placeholder="Ingrese su correo electronico" />
+                            <span asp-validation-for="Correo" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="Contrasena">Contraseña</label>
+                            <input type="password" id="Contrasena" asp-for="Contrasena" class="form-control" placeholder="Ingrese su contraseña" />
+                            <span asp-validation-for="Contrasena" class="text-danger"></span>
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" asp-for="MantenerActivo" class="form-check-input" />
+                            <label asp-for="MantenerActivo" class="form-check-label">Mantener activo</label>
+                        </div>
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn btn-primary btn-lg">Iniciar Sesion</button>
+                        </div>
+                    </form>
+                    @if (ViewBag.Error!=null)
+                    {
+                           <div class="text-danger text-center">@ViewBag.Error</div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

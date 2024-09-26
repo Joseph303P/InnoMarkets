@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("InnoMasketss")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3267e78c7028cb3434d0c02bd32eb134dd45101f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1953f8da03c087025485d12b16f911ba4ae53b24")]
 [assembly: System.Reflection.AssemblyProductAttribute("InnoMasketss")]
 [assembly: System.Reflection.AssemblyTitleAttribute("InnoMasketss")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
